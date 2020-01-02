@@ -1,0 +1,14 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: ServiceB
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    leaseExpirationDurationInSeconds: 15
+    leaseRenewalIntervalInSeconds: 5
+  server:
+    evictionIntervalTimerInMs: 5000
