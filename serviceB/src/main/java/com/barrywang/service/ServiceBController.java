@@ -1,5 +1,8 @@
 package com.barrywang.service;
 
+import com.barrywang.service.feign.ServiceAFeignClient;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,11 +21,17 @@ public class ServiceBController {
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
+	@Autowired
+    private ServiceAFeignClient serviceAFeignClient;
 
 	@RequestMapping(value = "/greeting/{name}", method = RequestMethod.GET)
 	public String greeting(@PathVariable("name") String name) {
 		RestTemplate restTemplate = getRestTemplate();
 		return restTemplate.getForObject("http://ServiceA/sayHello/" + name, String.class);
 	}
-	
+
+    @RequestMapping(value = "/feign/greeting/{name}", method = RequestMethod.GET)
+    public String greetingWithFeign(@PathVariable("name") String name) {
+        return serviceAFeignClient.sayHello(name);
+    }
 }
