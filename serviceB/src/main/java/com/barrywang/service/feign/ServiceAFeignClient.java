@@ -16,4 +16,10 @@ public interface ServiceAFeignClient {
      */
     @GetMapping(path = "/sayHello/{name}")
     String sayHello(@PathVariable("name") String name);
+
+    /**
+     * feign 接口调用
+     */
+    @GetMapping(path = "/sayBye/{name}")
+    String sayBye(@PathVariable("name") String name);
 }
