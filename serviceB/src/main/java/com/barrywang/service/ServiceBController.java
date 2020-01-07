@@ -34,4 +34,9 @@ public class ServiceBController {
     public String greetingWithFeign(@PathVariable("name") String name) {
         return serviceAFeignClient.sayHello(name);
     }
+
+    @RequestMapping(value = "/feign/greeting/{name}", method = RequestMethod.GET)
+    public String sayBye(@PathVariable("name") String name) {
+        return serviceAFeignClient.sayBye(name);
+    }
 }
