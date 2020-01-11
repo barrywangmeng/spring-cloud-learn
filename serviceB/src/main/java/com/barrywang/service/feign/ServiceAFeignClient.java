@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author wangmeng
  * @since 2019-08-21
  */
-@FeignClient(name = "serviceA")
+@FeignClient(name = "serviceA", fallbackFactory = ServiceAFallbackFactory.class)
 public interface ServiceAFeignClient {
 
     /**
