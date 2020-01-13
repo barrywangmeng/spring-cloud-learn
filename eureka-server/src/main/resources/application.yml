@@ -5,8 +5,8 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
   instance:
-    leaseExpirationDurationInSeconds: 15
-    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 120
+    leaseRenewalIntervalInSeconds: 60
   server:
       evictionIntervalTimerInMs: 5000
       enable-self-preservation: false
