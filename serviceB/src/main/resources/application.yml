@@ -15,8 +15,8 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 3600000
-        readTimeout: 3600000
+        connectTimeout: 1000
+        readTimeout: 1000
         loggerLevel: full
   hystrix:
     enabled: true
@@ -27,7 +27,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3600000
+            timeoutInMilliseconds: 3000
         circuitBreaker:
           requestVolumeThreshold: 4
 

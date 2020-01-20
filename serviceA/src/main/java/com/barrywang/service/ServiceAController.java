@@ -17,7 +17,7 @@ public class ServiceAController {
 			method = RequestMethod.GET)
 	public String sayHello(@PathVariable("name") String name) throws InterruptedException {
 		System.out.println("被调用了一次");
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 		return "{'msg': 'hello, " + name + "'}";  
 	}
 
