@@ -10,6 +10,7 @@ eureka:
   instance:
     leaseExpirationDurationInSeconds: 60
     leaseRenewalIntervalInSeconds: 30
+  registryFetchIntervalSeconds: 10
 
 feign:
   client:
